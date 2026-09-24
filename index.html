@@ -661,6 +661,13 @@ $(document).on(":passagerender", function () {
 	setTimeout(setup.updateStatsPanel, 0);
 });
 
+setup.preloadImages = function (...urls) {
+    urls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+};
+
 
 
 
@@ -776,6 +783,22 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 &lt;p&gt;Все, що хотів, пояснив. Час починати.&lt;/p&gt;
     
 &lt;p&gt;15 червня, 2004 року. Микола живе в невеликому містечку в Україні. Нещодавно він закінчив 10 клас середньої школи й саме зараз збирається поснідати.&lt;/p&gt;
+
+&lt;&lt;run setup.preloadImages(
+    &quot;Images/Loacations/Hometown/Forest.jpg&quot;,
+    &quot;Images/Loacations/Hometown/House.jpg&quot;,
+    &quot;Images/Loacations/Hometown/Park.jpg&quot;,
+    &quot;Images/Loacations/Hometown/School.jpg&quot;,
+    &quot;Images/Loacations/Hometown/Stadium.jpg&quot;,
+    &quot;Images/Loacations/Hometown/Street.jpg&quot;,
+    &quot;Images/Loacations/Hometown/Vokzal.jpg&quot;,
+    &quot;Images/Loacations/House/Badroom1.jpg&quot;,
+    &quot;Images/Loacations/House/Badroom2.jpg&quot;,
+    &quot;Images/Loacations/House/Corridor.jpg&quot;,
+    &quot;Images/Loacations/House/Kitchen.jpg&quot;,
+    &quot;Images/Loacations/House/Main.jpg&quot;,
+    &quot;Images/Quests/1.1.1/1.jpg&quot;
+)&gt;&gt;
             
             [[Дім]]
 		&lt;&lt;/replace&gt;&gt;
@@ -983,6 +1006,27 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 			&lt;&lt;set _nextQ.active = true&gt;&gt;
                     
             &lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+            
+            &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Loacations/Town/Chirch.jpg&quot;,
+    			&quot;Images/Loacations/Town/Dorm.jpg&quot;,
+                &quot;Images/Loacations/Town/JenyaHouse.jpg&quot;,
+                &quot;Images/Loacations/Town/Office.jpg&quot;,
+                &quot;Images/Loacations/Town/Room.jpg&quot;,
+                &quot;Images/Loacations/Town/Town.jpg&quot;,
+                &quot;Images/Loacations/Town/University.jpg&quot;,
+                &quot;Images/Loacations/Town/Vokzal.jpg&quot;,
+    			&quot;Images/Quests/1.1.2/1.jpg&quot;,
+                &quot;Images/Quests/1.1.2/2.jpg&quot;,
+                &quot;Images/Quests/1.1.2/3.jpg&quot;,
+                &quot;Images/Quests/1.1.2/4.jpg&quot;,
+                &quot;Images/Quests/1.1.2/5.jpg&quot;,
+                &quot;Images/Quests/1.1.2/6.jpg&quot;,
+                &quot;Images/Quests/1.1.2/7.jpg&quot;,
+                &quot;Images/Quests/1.1.2/8.jpg&quot;,
+                &quot;Images/Quests/1.1.2/9.jpg&quot;,
+                &quot;Images/Quests/1.1.2/10.jpg&quot;
+			)&gt;&gt;
 
 			[[Коридор -&gt;Дім]]
         &lt;&lt;/if&gt;&gt;
@@ -1039,7 +1083,7 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _q and _q.stage is 1&gt;&gt;
-	&lt;img src=&quot;https://i.postimg.cc/L87FMvGq/Park.jpg&quot; class=&quot;location-image&quot;&gt;
+	&lt;img src=&quot;Images/Locations/Hometown/Park.jpg&quot; class=&quot;location-image&quot;&gt;
     
     &lt;img src=&quot;Images/Quests/1.1.2/4.jpg&quot; class=&quot;location-image&quot;&gt;  
     
@@ -1208,6 +1252,16 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 		&lt;&lt;set _nextQ.active = true&gt;&gt;
         
         &lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+        
+        &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/1.1.3/1.jpg&quot;,
+                &quot;Images/Quests/1.1.3/2.jpg&quot;,
+                &quot;Images/Quests/1.1.3/3.jpg&quot;,
+                &quot;Images/Quests/1.1.3/4.jpg&quot;,
+                &quot;Images/Quests/1.1.3/5.jpg&quot;,
+                &quot;Images/Quests/1.1.3/6.jpg&quot;,
+                &quot;Images/Quests/1.1.3/7.jpg&quot;
+			)&gt;&gt;
         
         [[Закрити аську -&gt;Дім - Спальня]]
    	&lt;&lt;/clickreplace&gt;&gt;
@@ -1459,6 +1513,12 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 						&lt;&lt;set _nextQ.active = true&gt;&gt;
         
         				&lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+                        
+                        &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/1.1.4/1.jpg&quot;,
+                &quot;Images/Quests/1.1.4/2.jpg&quot;,
+                &quot;Images/Quests/1.1.4/3.jpg&quot;
+			)&gt;&gt;
         
         				[[Закрити аську -&gt;Дім]]
             		&lt;&lt;/clickreplace&gt;&gt;
@@ -1641,6 +1701,14 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 			&lt;&lt;set _q.hint = &quot;&quot;&gt;&gt;
             &lt;&lt;set _nextQ = setup.getQuestById(&quot;m1_r1_q5&quot;)&gt;&gt;
 			&lt;&lt;set _nextQ.active = true&gt;&gt;
+            
+            &lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+            
+            &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/1.1.5/1.jpg&quot;,
+                &quot;Images/Quests/1.1.5/2.jpg&quot;,
+                &quot;Images/Quests/1.1.5/3.jpg&quot;
+			)&gt;&gt;
             
 			[[Завершити -&gt;Дім]]
        	&lt;&lt;/clickreplace&gt;&gt;
@@ -1828,6 +1896,22 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 	&lt;&lt;set _nextQ.active = true&gt;&gt;
         
     &lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;    
+    
+    &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/2.1.1/1.jpg&quot;,
+                &quot;Images/Quests/2.1.1/2.jpg&quot;,
+                &quot;Images/Quests/2.1.1/3.jpg&quot;,
+                &quot;Images/Quests/2.1.1/4.jpg&quot;,
+                &quot;Images/Quests/2.1.1/5.jpg&quot;,
+                &quot;Images/Quests/2.1.1/6.jpg&quot;,
+                &quot;Images/Quests/2.1.1/7.jpg&quot;,
+                &quot;Images/Quests/2.1.1/8.jpg&quot;,
+                &quot;Images/Quests/2.1.1/9.jpg&quot;,
+                &quot;Images/Quests/2.1.1/10.jpg&quot;,
+                &quot;Images/Quests/2.1.1/11.jpg&quot;,
+                &quot;Images/Quests/2.1.1/12.jpg&quot;
+			)&gt;&gt;
+            
     [[Завершити -&gt;Дім]]
 &lt;&lt;/if&gt;&gt;
 
@@ -2070,6 +2154,11 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 				&lt;&lt;set _nextQ.active = true&gt;&gt;
         
         		&lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+                
+                &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/2.1.2/1.jpg&quot;,
+                &quot;Images/Quests/2.1.2/2.jpg&quot;
+				)&gt;&gt;
          	&lt;&lt;/if&gt;&gt;
 			&lt;&lt;goto &quot;Місто&quot;&gt;&gt;
 		&lt;&lt;/link&gt;&gt;
@@ -2240,6 +2329,14 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 			&lt;&lt;set _nextQ.active = true&gt;&gt;
         
         	&lt;&lt;run setup.showQuestComplete(_q)&gt;&gt;
+            
+            &lt;&lt;run setup.preloadImages(
+    			&quot;Images/Quests/2.1.3/1.jpg&quot;,
+                &quot;Images/Quests/2.1.3/2.jpg&quot;,
+                &quot;Images/Quests/2.1.3/3.jpg&quot;,
+                &quot;Images/Quests/2.1.3/4.jpg&quot;,
+				)&gt;&gt;
+            
         	&lt;&lt;goto &quot;Місто&quot;&gt;&gt;
 		&lt;&lt;/link&gt;&gt;
     &lt;&lt;/clickreplace&gt;&gt;
