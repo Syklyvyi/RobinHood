@@ -748,6 +748,10 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 &lt;&lt;set $mode = 1&gt;&gt; 
 &lt;&lt;set $quests = clone(setup.questsTemplate)&gt;&gt; 
 &lt;&lt;set $questMenu = { openChapter: 0 }&gt;&gt;
+
+&lt;&lt;run setup.preloadImages(
+    			&quot;Images/Basic/terminator.jpg&quot;,
+                &quot;Images/Basic/dulya.jpg&quot;)&gt;&gt;
 &lt;p&gt;Хотіли б ви мати змогу зв’язатися з собою 16-річним? Допомогти уникнути хибних рішень й підказати правильні?&lt;/p&gt;
 
 &lt;p&gt;В грі &quot;Ссикливий Робін Гуд&quot; це можливо.&lt;/p&gt;
