@@ -365,7 +365,7 @@ body {
 	font-weight: bold;
 	min-width: 40px;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">setup.questsTemplate = [
-    { id: "m1_r1_q1", mod: 1, chapter: 1, guest: 1, name: "Поїш деруни як людина.", hint: "Йди на кухню.", active: true,  stage: 0, done: false },
+    { id: "m1_r1_q1", mod: 1, chapter: 1, guest: 1, name: "Поїш млинці як людина.", hint: "Йди на кухню.", active: true,  stage: 0, done: false },
     { id: "m1_r1_q2", mod: 1, chapter: 1, guest: 2, name: "Поговори з собою із майбутнього.", hint: "Перевір комп’ютер у спальні.", active: false, stage: 0, done: false },
   	{ id: "m1_r1_q3", mod: 1, chapter: 1, guest: 3, name: "Повідом новини батькам.", hint: "Прокачайся (вітальня, стадіон) й зароби гроші (ліс).", active: false, stage: 0, done: false, money: 0, sport: 0, read: 0, action: 0 },
   	{ id: "m1_r1_q4", mod: 1, chapter: 1, guest: 4, name: "Спитай про майбутнє.", hint: "Аська", active: false, stage: 0, done: false },
@@ -668,6 +668,12 @@ setup.preloadImages = function (...urls) {
     });
 };
 
+setup.translations = {
+    "деруни": "potato pancakes",
+  	"дерун": "potato pancake",
+  	"деруна": "potato pancake"
+};
+
 
 
 
@@ -850,7 +856,7 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 [[На вулицю -&gt;Вулиця]]</tw-passagedata><tw-passagedata pid="4" name="StoryMenu" tags="" position="0,0" size="100,100">&lt;&lt;link &quot;📜 Квести&quot;&gt;&gt;&lt;&lt;goto &quot;Квести&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Дім - Кухня" tags="nobr" position="100,100" size="100,100">&lt;img src=&quot;Images/Locations/House/Kitchen.jpg&quot; class=&quot;location-image&quot;&gt;
 
 &lt;&lt;if setup.getQuestById(&quot;m1_r1_q1&quot;)?.active&gt;&gt;
-    [[Поїсти дерунів-&gt;1_1_1]]
+    [[Поїсти млинців -&gt;1_1_1]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;scene-text&quot; id=&quot;map1&quot;&gt;&lt;/div&gt;
@@ -966,16 +972,16 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
 &lt;img src=&quot;Images/Quests/1.1.1/1.jpg&quot; class=&quot;location-image&quot;&gt;
 
 &lt;&lt;if _q and _q.stage is 0&gt;&gt;
-	&lt;&lt;clickreplace &quot;Взяти деруна на вилку й обмокнути в сметану&quot; &quot;map&quot;&gt;&gt;
-    	&lt;p&gt;Дерун виявляється тонким, ще й рука смикнулася в момент занурення в сметану, в результаті чого більша його частина відірвалася й звалилася в банку.&lt;/p&gt;
+	&lt;&lt;clickreplace &quot;Взяти млинця на вилку й обмокнути в сметану&quot; &quot;map&quot;&gt;&gt;
+    	&lt;p&gt;Млинець виявляється тонким, ще й рука смикнулася в момент занурення в сметану, в результаті чого більша його частина відірвалася й звалилася в банку.&lt;/p&gt;
 
-			&lt;p&gt;Замість того, щоб акуратно підхопити деруна знизу й витягнути, вам захотілось проштикнути його зверху. Дерун занурюється повністю в сметану. Ви чортихаєтесь, нервуєте й ще довго тягаєте його по банці, перш ніж витягнути нагору.&lt;/p&gt;
+			&lt;p&gt;Замість того, щоб акуратно підхопити млинець знизу й витягнути, вам захотілось проштикнути його зверху. Млинець занурюється повністю в сметану. Ви чортихаєтесь, нервуєте й ще довго тягаєте його по банці, перш ніж витягнути нагору.&lt;/p&gt;
 
 			[img[Images/Quests/1.1.1/2.jpg]]
 
 			&lt;p&gt;Повне фіаско! Поснідав, але загидив всю банку із сметаною. Ось яким персонажем вам доведеться керувати. Там, де є можливість затупити, він нею скористається. Навіть не сумнівайтесь.&lt;/p&gt;
 
-			&lt;p&gt;Очевидно, що квест &quot;Поїш деруни як людина&quot; не виконано.&lt;/p&gt;
+			&lt;p&gt;Очевидно, що квест &quot;Поїш млинці як людина&quot; не виконано.&lt;/p&gt;
 
 			[img[Images/Basic/dulya.jpg]]
 
@@ -989,7 +995,7 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
     &lt;&lt;/clickreplace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if _q and _q.stage is 1&gt;&gt;
-	&lt;&lt;clickreplace2 &quot;choice1&quot; &quot;Взяти деруна на вилку й обмокнути в сметану&quot; &quot;Звільнити місце для сметани в тарілці й налити її туди&quot; &quot;map&quot;  `_q.stage == 1` `_q.stage == 1`&gt;&gt;
+	&lt;&lt;clickreplace2 &quot;choice1&quot; &quot;Взяти млинець на вилку й обмокнути в сметану&quot; &quot;Звільнити місце для сметани в тарілці й налити її туди&quot; &quot;map&quot;  `_q.stage == 1` `_q.stage == 1`&gt;&gt;
     	&lt;&lt;if $choice1 is 1&gt;&gt;
         	&lt;p&gt;Думали, при повторному виборі того ж варіанту щось інше буде? Та ні. Ловіть дулю.&lt;/p&gt;
 
@@ -999,7 +1005,7 @@ l10nStrings.debugViewTitle = "Режим налагодження";</script><tw-
         &lt;&lt;/if&gt;&gt;
         
         &lt;&lt;if $choice1 is 2&gt;&gt;
-        	&lt;p&gt;Деруни з&#39;їдені.&lt;/p&gt;
+        	&lt;p&gt;Млинці з&#39;їдені.&lt;/p&gt;
 
 			[img[Images/Quests/1.1.1/3.jpg]]
 
